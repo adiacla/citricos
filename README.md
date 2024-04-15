@@ -1,6 +1,6 @@
 # Mango Leaf Disease Prediction
 
-![image](https://github.com/MainakRepositor/MLDP/assets/64016811/7287fa8f-e3b0-4db2-aa62-15f700671129)
+![Hojas de mango]([https://github.com/MainakRepositor/MLDP/assets/64016811/7287fa8f-e3b0-4db2-aa62-15f700671129](https://huerto-en-casa.com/wp-content/uploads/2021/12/enfermedades-del-mango.jpg))
 
 Detecta y predice e tipo de enfermedad que ha ocurrido en una hoja de mango a partir de su imagen.
 

@@ -1,5 +1,4 @@
-# Mango Leaf Disease Prediction
-
+# Predicción de enfermedades de la hoja de Mango
 ![Hojas de mango](https://huerto-en-casa.com/wp-content/uploads/2021/12/enfermedades-del-mango.jpg)
 
 Detecta y predice e tipo de enfermedad que ha ocurrido en una hoja de mango a partir de su imagen.

@@ -16,6 +16,7 @@ import tensorflow as tf
 import random
 from PIL import Image, ImageOps
 import numpy as np
+from io import BytesIO
 
 # hide deprication warnings which directly don't affect the working of the application
 import warnings
@@ -65,7 +66,7 @@ st.write("""
          """
          )
 
-file = st.file_uploader("", type=["jpg", "png"])
+img_file_buffer = st.camera_input("Capture una foto de una hoja de mango")
 def import_and_predict(image_data, model):
         size = (224,224)    
         image = ImageOps.fit(image_data, size, Image.Resampling.LANCZOS)
@@ -75,10 +76,13 @@ def import_and_predict(image_data, model):
         return prediction
 
         
-if file is None:
-    st.text("Por favor cargue una imagen")
+if img_file_buffer is None:
+    st.text("Por favor tome una foto")
 else:
-    image = Image.open(file)
+    bytes_data = img_file_buffer.getvalue()
+    image_stream = BytesIO(bytes_data)
+        # Abrir la imagen con PIL
+    image = Image.open(image_stream)
     st.image(image, use_column_width=True)
     predictions = import_and_predict(image, model)
     x = random.randint(98,99)+ random.randint(0,99)*0.01

@@ -57,13 +57,14 @@ with st.sidebar:
         st.image('hojas.png')
         st.title("Estado de salud Manguifera")
         st.subheader("Detección de enfermedades presentes en las hojas del mango usando Depp Learning CNN. Esto ayuda al campesino a detectar fácilmente la enfermedad e identificar su causa.")
-	st.subheader("Alfredo Diaz- UNAB 2024")
+        
 
 st.image('Logo_SmartRegions.gif')
 st.title("Smart Regions Center")
 st.write("Somos un equipo apasionado de profesionales dedicados a hacer la diferencia")
 st.write("""
          # Detección de enfermedades del mango con su recomendación de tratamiento
+	 Alfredo Diaz -UNAB
          """
          )
 

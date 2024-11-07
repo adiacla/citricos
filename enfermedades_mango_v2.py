@@ -68,10 +68,26 @@ st.write("""
 
 file = st.file_uploader("", type=["jpg", "png"])
 def import_and_predict(image_data, model):
-    size = (224, 224)    
+    # Redimensionar la imagen a las dimensiones 256x256 que el modelo espera
+    size = (256, 256)
     image = ImageOps.fit(image_data, size, Image.Resampling.LANCZOS)
+    
+    # Asegurarse de que la imagen esté en formato RGB (3 canales)
+    image = image.convert('RGB')
+
+    # Convertir la imagen a un array de NumPy
     img = np.asarray(image)
-    img_reshape = img[np.newaxis,...]
+    
+    # Normalizar la imagen (suponiendo que durante el entrenamiento la normalización fue a [0, 1])
+    img = img.astype("float32") / 255.0
+    
+    # Asegurarse de que la imagen tenga la forma correcta (añadir una dimensión extra)
+    img_reshape = img[np.newaxis, ...]  # (1, 256, 256, 3)
+
+    # Verificar las dimensiones de la imagen
+    print(img_reshape.shape)  # Esto debe ser (1, 256, 256, 3)
+
+    # Realizar la predicción
     prediction = model.predict(img_reshape)
     return prediction
 

@@ -54,7 +54,7 @@ def prediction_cls(prediction):  # Predecir la clase de las imágenes basándose
             return key
 
 with st.sidebar:
-    st.image('hojas_citricos.png')  # Asegúrate de tener una imagen de hojas de cítricos
+    st.image('hojas_citricos.jpg')  # Asegúrate de tener una imagen de hojas de cítricos
     st.title("Estado de salud de los cítricos")
     st.subheader("Detección de enfermedades presentes en las hojas de los cítricos usando Deep Learning CNN. Esto ayuda a los agricultores a detectar fácilmente las enfermedades y prevenir su propagación.")
 
